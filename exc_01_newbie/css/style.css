@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap');
+
+:root{
+    --dark-cyan: #5ca187;
+    --very-dark-blue: #1c232b;
+    --dark-gray: #6c7289;
+    --bgcolor: #f2ebe3;
+}
+
+body {
+    font-size: 16px;
+    background-color: var(--bgcolor);
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10% auto;
+    width:  min(600px,90%);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px #d6cdc3;
+}
+
+.card-image-box {width: 50%;}
+.card-image{width: 100%; vertical-align: middle;}
+
+.card-box-content{width: 50%; padding: 5%;}
+
+.card-content {
+    text-align: left;
+    display: block;
+    width: 100%;
+    color: var(--very-dark-blue);
+    font: 700 1.6rem/1.2 'Fraunces',sans-serif;
+}
+
+.card-content-uptitle {
+	font: 500 1rem/1.2 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	margin: 5% 0;
+	letter-spacing: 4px;
+	color: var(--dark-gray);
+}
+
+.card-describle {
+    font: 500 .9rem/1.5 'Montserrat',sans-serif;
+    margin: 10% 0;
+    color:  var(--dark-gray);
+}
+
+.card-price{
+    font-size: 1.8rem;
+    margin: 10% 0;
+    color: var(--dark-cyan);
+}
+
+.old-price {
+    margin-left: 5%;
+    vertical-align: middle;
+    font: 500 .9rem/1.2 'Montserrat',sans-serif;
+    text-decoration: line-through;
+    color:  var(--dark-gray);
+}
+
+.card-button {
+    background: var(--dark-cyan) url('../res/cart.svg') 23% center/7% no-repeat;
+    width:100%;
+    padding:  5%;
+    border-radius: 10px;
+    border: 1px solid var(--dark-cyan);
+    font: 570 .9rem/1.2 'Montserrat',sans-serif;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+}
+.card-button:hover{ background-color: #40735f;}
+
+@media(max-width: 610px) {
+    .card-image-box {width: 100%;}
+    .card-box-content{width: 100%; padding: 5%;}
+    .card-content{width: 100%; padding: 1%;}
+    .card-content-uptitle{font-size: 1rem;}
+    .card-content-title{margin-top: 1%; font-size: 2rem;}
+    .card-describle{width: 90%; margin-right: 10%; margin: 4% 0;}
+    .card-price{margin: 8% 0;}
+}
+
+.copy {
+	text-align: center;
+	margin: 3% 0;
+	font: 200 .8rem/1 'Montserrat',Sans-serif;
+	color: #818181;
+}
