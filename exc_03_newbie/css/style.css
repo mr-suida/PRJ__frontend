@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+	font-family: 'Karla', sans-serif;
+	font-size: 17px;
+	background-color: #e5eff5;
+	color: #fafafa;
+}
+
+.main-box {
+	display: flex;
+	flex-wrap: wrap;
+	width: min(720px,90%);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 1px 1px 15px 5px rgba(0,0,0,.10);
+}
+
+.head-section {width: 100%;background: #fafafa; padding: 4% 10%;}
+	h1{font-size: 1.4rem; font-weight: 700; color:#2ab2af; margin-bottom: 4%;}
+	h2{font-size: 1.1rem; font-weight: 700; color:#c0df34; margin-bottom: 3%;}
+	
+	.head-section-desc {
+		display: block;
+		margin-top: 3%;
+		width: 100%;
+		color: #98a6bd;
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+
+.subscript-section{width: 50%; background-color: #2bb3b1; padding: 5%;}
+	h3{font-size: 1rem;color: #fafafa;}
+	
+	.product-price {
+		display: block;
+		width: 100%;
+		font-size: 2.1rem;
+		font-weight: 700;
+		margin-top: 4%;
+	}
+
+	.month-text {
+	    /*vertical-align: middle;*/
+		font-size: 1.1rem; 
+		font-weight: 400;
+		color: #c3c3c3;
+	}
+
+	.more-price-info {
+		display: block;
+		width: 100%;
+		font-size: 1rem;
+		font-weight: 400;
+		margin-top: 2%;
+	}
+
+	.singup-bnt{
+		display: block;
+		width: 100%;
+		border: 1px solid #c0df34;
+		padding: 4%;
+		background-color: #c0df34;
+		border-radius: 5px;
+		font-size: 1.1rem;
+		font-weight: 700;
+		margin-top: 11%;
+		color: #fafafa;
+		box-shadow: 0 7px 10px 3px rgba(0,0,0,.1);
+		cursor: pointer;
+	}
+
+.whay-section{width: 50%; padding: 5%; background-color: #4abebd;}
+	h4{font-size: 1rem;}
+	.whay-desc {
+		width: 90%;
+		font-size: 1rem;
+		line-height: 1.5;
+		margin: 5% 0;
+	}
+
+@media(max-width:612px) {
+    .main-box{flex-direction: column; margin-top: 5%;}
+    
+    .head-section,
+    .subscript-section,
+    .whay-section{width: 100%; padding: 10% 10% 5% 10%;}
+    .singup-bnt{margin-bottom: 5%;}
+    h1{font-size: 2.1rem; margin-bottom: 5%;}
+    h2{font-size: 1.3rem; margin-bottom: 5%;}
+    h3{font-size: 1.5rem; margin-bottom: 5%;}
+    h4{font-size: 1.5rem; margin-bottom: 5%;}
+    .head-section-desc {
+        line-height: 1.9; 
+        font-size: 1.3rem;
+        margin-bottom: 4%;
+    }
+    
+   .whay-desc {font-size: 1.2rem;line-height: 1.4;}
+}
