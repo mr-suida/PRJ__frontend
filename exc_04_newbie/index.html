@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Frontend Mentor | Base Apparel coming soon page</title>
+	    <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="icon" href="images/favicon.png"/>
+        <link rel="stylesheet" href="styles/reset.css"/>
+        <link rel="stylesheet" href="styles/style.css"/>
+	</head>
+    <body>
+        <main class="main-box">
+            <div class="logo-box"><img src="images/logo.svg" alt="logo icone" class="logo-image"/></div>
+                
+            <header class="header-box">
+                <h1 class="head-title"><span class="marked-text">We're<br></span> coming <br>soon </h1>
+                <p class="product-desc">
+                    Hello fellow shoppers! We're currently building our new 
+                    fashion store. Add your email below to stay up-to-date 
+                    with announcements and our launch deals.
+                </p>
+            </header>
+
+            <form class="form-box">
+                <div class="form-input-box">
+                    <input class="form-input-email" type="email" placeholder="Email Addres"/>
+                    <button class="form-input-send"></button>
+                    <span class="form-error-msg"> Please provide a valid email </span>                   
+                </div> 
+            </form>
+
+            <aside class="aside-box">
+                <picture class="image-box">
+                    <source srcset="images/hero-mobile.jpg"  media="(max-width: 612px)"/>
+                    <source srcset="images/hero-desktop.jpg" media="(min-width: 613px)"/>
+                    <img src="images/hero-mobile.jpg" class="aside-image" alt="picture of woman"/>
+                </picture>
+            </aside>
+        </main>
+    </body>
+</html>
