@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Frontend Mentor | Interactive card details form </title>
+        <meta name="viewport" content="width=device-width"/>
+        <meta charset="UTF-8">
+        <meta name="describle" content="card Interactive page">
+        <link rel="icon" type="image/png" sizes="32x32" href="/res/favicon-32x32.png">
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <div class="card-container">
+            <div class="card-box">
+                <div class="card card-front">
+                    <img class="card-logo-img" src="res/card-logo.svg" alt="card logo image"/>
+                    <label class="card-label-number" for="card-number">0000 0000 0000 0000</label>
+                    <div class="label-name-box">
+                        <label class="card-label-name" for="card-name">JANE APPLESEED.</label>
+                        <label class="card-label-date" for="card-date">00/00</label>
+                    </div>
+                </div> 
+                <div class="card card-back">
+                    <label class="card-label-cvc" for="card-cvc">000</label>
+                </div>              
+            </div>
+
+            <div class="form-box" >
+                <form class="form-1">
+                    <div class="form-input-box">
+                        <label class="form-label" for="card-name">cardholder name </label>
+                        <input class="form-input" id= "card-name" placeholder="e.g Jane Appleseed" maxlength="19">
+                        <span class="form-error card-name-error">Can't be blank</span>
+                    </div>
+                    <div class="form-input-box">
+                        <label class="form-label" for="card-number">card number</label>
+                        <input class="form-input" type="tel" id="card-number" placeholder="e.g 1234 5678 9123 0000">
+                        <span class="form-error card-number-error">Wrong format, numbers only</span>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-grid-child">
+                            <label class="form-label" for="card-date">exp.date &nbsp;(mm/yy)</label>
+                            <input class="form-input grid-input" type="tel" id="card-date" placeholder="MM">
+                            <input class="form-input grid-input" type="tel" id="card-year" placeholder="YY">
+                            <span class="form-error card-date-error">Can't be blank</span>
+                        </div>
+                        <div class="form-grid-child">
+                            <label class="form-label" for="card-cvc">cvc</label>
+                            <input class="form-input cvc-input" type="tel" id="card-cvc" placeholder="e.g 123">
+                            <span class="form-error card-cvc-error">Can't be blank</span>
+                        </div>
+                    </div>
+                    
+                    <input type="button" class="send-button" id="submit-bnt" value="Confirm"/>
+                </form>
+            </div>
+
+            <div class="sucess-box">
+                <img class="sucess-image" src="res/icon-complete.svg" alt="is ok, image"/>
+                <h1>thank you</h1>
+                <p class="sucess-info-message">
+                    We've added your car details 
+                </p>
+                <button class="sucess-button">Continue</button>
+            </div>
+        </div>
+        <script src="src/main.js"></script>
+    </body>
+</html>

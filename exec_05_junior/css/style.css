@@ -1,0 +1,255 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --input-border-color-actived:  #6448fe;
+    --input-text-color-actived:    #600594;
+    --button-bg-color: 	#21092f;
+    --error-text-color:     #ff5252;
+    --input-label-color: #21092f;
+    --input-text-color: #21092f;
+    --light-gray:  #dedddf;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+}
+
+.card-box {
+    height: 100%; width: 100%;
+    position: relative;
+    top: 0; left: 0;
+    background: transparent url('../res/bg-desktop.png') 0 0 /50% 100% no-repeat;
+}
+    .card {
+        position: absolute;
+        width: 25vw;
+        height:15vw;
+        border-radius: 14px;
+        overflow: hidden;
+        overflow: hidden;
+        box-shadow: 1px 2px 12px #000;
+    }
+    .card-front{
+        top: 5vw; left: 9vw;
+        background: transparent url('../res/bg-card-front.png') 0 0 /100% 100% no-repeat; 
+        z-index: 999;
+    }
+    .card-back{ 
+        top: 23vw; left: 16vw;
+        background: transparent url('../res/bg-card-back.png') 0 0 /100% 100% no-repeat; 
+    }
+
+    .card-logo-img {
+        display: block;
+        width: 20%;
+        position: relative;
+        top: 10%; left: 10%;
+    }
+
+    .card-label-number {
+        display: block;
+        width: 80%;
+        position: relative;
+        top: 6vw; left: 10%;
+        text-align: left;
+        font-size: 1.5vw;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .label-name-box {
+        position: relative;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        width: 80%;
+        top: 7vw; left: 10%;
+        text-align: left;
+        color: #fff;
+        cursor: pointer;
+    }
+    .card-label-name {font-size: 1.1vw;}
+    .card-label-date {font-size: .9vw; text-align: right;}
+    
+   
+    .card-label-cvc {
+        display: block;
+        width: 78%;
+        top: 6.7vw; left: 10%;
+        position: relative;
+        font-size: 1vw;
+        text-align: right;
+        color: #fff;
+        cursor: pointer;
+    }
+
+
+.form-box {
+    width: 100%; height: 100%;
+}
+    .form-1  {
+        width: 60%;
+        margin: 20% 0;
+    }
+
+    .form-input-box {
+        display: block;
+        width: 100%;
+        margin: 8% 0;
+    }
+
+    .form-label {
+        display: block;
+        width: 100%;
+        text-align: left;  
+        text-transform: uppercase;
+        font-size: 1.1vw;
+        color: var(--input-label-color);
+    }
+
+    .form-input {
+        display: block;
+        width: 100%;
+        margin-top: 2%;
+        border-radius: 10px;
+        border:  .8px solid #818181;
+        padding: .7vw;
+        font-size: 1.2vw;
+        outline: none;
+        color: vad(--input-text-color);
+    }
+
+    .form-input::placeholder {
+        font-size:1.2vw;
+        vertical-align: middle;
+        color: #cecece;
+    }
+    .form-input:focus, .form-input:hover {
+        border:  0.8px solid var(--input-border-color-actived);
+        color: var(--input-text-color-actived);
+    }
+    .form-grid {
+        text-align: left;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .grid-input {
+        margin-top: 4%;
+        display: inline;
+        width: 40%;
+        margin-right: 5%;
+    }
+
+    .cvc-input{margin-top: 4%;}
+
+    .form-error {
+        display: none;
+        width: 100%;
+        font-size: 1vw;
+        color: var(--error-text-color);
+        text-align: left;
+        margin: 3% 0;
+    }
+
+    .send-button {
+        display: block;
+        width: 100%;
+        background-color: var(--button-bg-color);
+        color: #fff;
+        border-radius: 7px;
+        border: 1px solid #000;
+        font-size: 1.3vw;
+        margin: 6% auto 2% auto;
+        padding:  3.4%;
+        cursor: pointer;
+    }
+
+
+.sucess-box {
+    text-align: center;
+    display: none;
+    width: 70%;
+    margin-top: 30%;
+    margin-left: 4%;
+}
+    .sucess-image{width: 15%;}
+
+    .sucess-box h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 2.4vw;
+        margin: 4% 0;
+        text-transform: uppercase;
+    }
+    .sucess-info-message {
+        width: 100%;
+        text-align: center;
+        font-size:1.1vw;
+        margin: 4% 0;   
+    }
+
+     .sucess-button {
+        display: block;
+        width: 100%;
+        background-color: var(--button-bg-color);
+        color: #fff;
+        border-radius: 7px;
+        border: 1px solid #000;
+        font-size: 1.1vw;
+        margin: 6% auto 2% auto;
+        padding:  3.4%;
+        cursor: pointer;
+    }
+
+
+    @media (max-width: 612px) {
+        .card-container {display: block; height: 100%;}
+        
+        .card-box {
+            width: 100%; height:60vw;
+            position: relative;
+            top: 0; left: 0;
+            background: transparent url('../res/bg-mobile.png') 0 0 /100% 60vw no-repeat;
+        }
+            .card {width: 80%;height:45vw;}
+            .card-front{top: 28vw; left: 5%;}
+            .card-back{top: 3vw; left: 15%;}
+            .card-label-number {font-size: 5.1vw;top: 16vw;}
+            .label-name-box {top: 18vw;}
+            .card-label-name{font-size: 3vw;}
+            .card-label-date{font-size: 3vw;}
+            .card-label-cvc{font-size: 4vw; top: 20vw;}
+        
+        .form-box {
+            width: 100%; height: auto;
+            margin-top: 20vw;
+        }
+            .form-1 { width: 80%; margin: 10% auto 0 auto;}
+            .form-label {margin-top: 3%; font-size: 3.2vw;}
+            .form-input {padding: 4vw;font-size: 3.4vw;}
+            .form-input::placeholder {font-size: 3vw;}
+            .send-button {padding: 4vw;font-size: 3.3vw;margin-top:15%}
+            .form-error{font-size: 3vw; margin: 1% 0;}
+
+        .sucess-box {
+            width: 90%;
+            margin: 36% auto 1% auto;
+        }
+            .sucess-image{width: 25%;}
+            .sucess-box h1{font-size: 9.3vw;}
+            .sucess-info-message{font-size: 3.9vw;}
+            .sucess-button{font-size: 4.1vw; margin-top: 20%;}
+    }
