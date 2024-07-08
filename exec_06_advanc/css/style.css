@@ -17,8 +17,9 @@
 body{
     position: relative;
     width: 100%;
-    height: 95vh;
+    height: 98vh;
     background: radial-gradient(circle, #1f3756 50%, #141539);
+    font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 .ghost-window {
@@ -58,8 +59,10 @@ body{
         }
 
 .t-main {
+    position: relative;
     display: block;
     width: min(1024px,95%);
+    height: 100%;
     margin: auto auto;
 }
     .header-container {
@@ -68,11 +71,10 @@ body{
         width: min(800px,95%);
         border: 3px solid hsl(217, 16%, 45%);
         border-radius: 10px;
-        padding: 20px;
+        padding: 15px;
         margin: 5% auto;
     }
         .header-container h1 {
-            font-family: "Barlow Semi Condensed", sans-serif;
             font-weight: 700;
             font-style: normal;
             font-size: 1.7rem;
@@ -84,16 +86,15 @@ body{
             width: 25%;
             border-radius: 10px;
             margin: 0 0 0 70%;
-            padding: 3% 0;
+            padding: 2% 0;
         }
             .points-label,.points-value {
                 text-align: center;
                 width: 100%;
                 display: block;
-                font-family: "Barlow Semi Condensed", sans-serif;
                 font-weight: 700;
                 font-style: normal;
-                font-size: 1rem;
+                font-size: 1.4rem;
                 color: blue;
             }
             .points-value  {
@@ -101,46 +102,43 @@ body{
                 font-size: 1.9rem;
             }
     
-    .game-options-chose {
+    .game-board {
         display: flex;
         justify-content: center;
         width: 70%;
+        height: 350px;
         margin: auto auto;
         margin-top: 4%;
         background: url("../res/bg_triangle.svg") no-repeat 50% 55% / 35%;
     }
-        .chose_box {
+        .game-option {
             background-color: #152C4C;
+            box-shadow: inset 1px 10px 10px rgba(0, 0, 0, 0.5);
+            border: 17px solid #152c4c; 
             display: block;
-            width: 170px;
-            height: 170px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             cursor: pointer;
         }
         
-        .chose_opt1 {
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-            border: 17px solid #5671F3; 
-            background: #f4f4f4 url("../res/paper.svg") no-repeat 50% 50% / 50%;
+        .g-opt1 {
+            border-color: #5671F3; 
+            background:   #f4f4f4 url("../res/paper.svg") no-repeat 50% 50% / 50%;
         }
-        .chose_opt2 {
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-            border: 17px solid#E44A66;
-            align-self: center;
-            background: #f4f4f4 url("../res/rock.svg") no-repeat 50% 50% / 50%;
+        
+        .g-opt2 {
+            border-color:#E44A66;
+            background:  #f4f4f4 url("../res/rock.svg") no-repeat 50% 50% / 50%;
         }
 
-        .chose_opt3 { 
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-            border: 17px solid #F0A523;
-            background: #f4f4f4 url("../res/scissors.svg") no-repeat 50% 50% / 50%;
+        .g-opt3 { 
+            border-color: #F0A523;
+            background:   #f4f4f4 url("../res/scissors.svg") no-repeat 50% 50% / 50%;
         }
-
-        .opt_in_middle { margin-top: 200px;}
-        .chose_box:hover { transform: scale(1.1);}
-        .chose_box:active {
-            transform: scale(1.0);
-        }
+        .game-board .g-opt2 { align-self: flex-end;}
+        .game-option:hover { transform: scale(1.1);}
+     
         .chose_box_win {
              box-shadow: 0 0 2px 20px rgba(0,0,0,.3),
                          0 0 2px 40px rgba(0,0,0,.2),
@@ -159,62 +157,60 @@ body{
         margin: auto auto;
         margin-top: 7%;
     }
-        .result_box label {
-            display: block;
+        .game-result div:nth-child(2) { align-self: center;}
+        .user-label,.hous-label {
             width: 100%;
             margin-bottom: 20px;
             text-align: center;
-            font-family: "Barlow Semi Condensed", sans-serif;
             font-weight: 700;
             font-style: normal;
             font-size: 1.6rem;
             color: #f4f4f4;
         }
-        .win-box {
-            margin-top: 6%;
+       
+        .stat-messg {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 1.6rem;
+            color: #f4f4f4;
         }
-            .win-box .win-title {
-                display: block;
-                width: 100%;
-                text-align: center;
-                font-family: "Barlow Semi Condensed", sans-serif;
-                font-weight: 700;
-                font-style: normal;
-                font-size: 1.6rem;
-                color: #f4f4f4;
-            }
-            .win-box .again-bnt {
-                display: block;
-                width: 160px;
-                background: #f4f4f4;
-                border: 1.4px solid #f4f4f4;
-                padding: 10%;
-                margin-top: 20%;
-                font-family: "Barlow Semi Condensed", sans-serif;
-                font-weight: 400;
-                font-style: normal;
-                font-size: 1.2rem;
-                border-radius: 4px;
-                color: blue;
-                cursor: pointer;
-            }
-    
+        .bnt-again {
+            display: block;
+            width: 160px;
+            background: #f4f4f4;
+            border: 1.4px solid #f4f4f4;
+            padding: 2%;
+            margin-top: 10px;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1rem;
+            border-radius: 4px;
+            color: blue;
+            cursor: pointer;
+        }
+
+   
     .bnt-rules {
+        position: absolute;
+        bottom: 10%;
+        right: 4%;
         display: block;
         background: transparent;
         border: 1.4px solid #f4f4f4;
-        padding: 1% 4%;
-        font-family: "Barlow Semi Condensed", sans-serif;
+        padding: 9px 4%;
         font-weight: 400;
         font-style: normal;
-        font-size: 1rem;
+        font-size: .9rem;
         border-radius: 4px;
         color: #f4f4f4;
-        margin-top: 4%;
+        margin-top: 2%;
         margin-left: auto;
         cursor: pointer;
     }
-    .bnt-rules:hover {
-        background-color: #f4f4f4;
-        color: blue;
-    }
+        .bnt-rules:hover {
+            background-color: #f4f4f4;
+            color: blue;
+        }
