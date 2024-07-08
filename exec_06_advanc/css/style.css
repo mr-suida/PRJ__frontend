@@ -7,12 +7,24 @@
     100% { transform: scale(1);}
 }
 
-*{
+.win-circle {
+    box-shadow: 0 0 2px 20px rgba(0,0,0,.1),
+        0 0 2px 40px rgba(0,0,0,.2),
+        0 0 2px 80px rgba(0,0,0,.1) !important;
+}
+
+.pulse-cicle {
+    box-shadow: none !important;
+/*    box-shadow: 0 0 2px 30px rgba(0,0,0,.1) !important;*/
+    animation: pulse .4s ease-in infinite;
+}
+
+
+*{ 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
 
 body{
     position: relative;
@@ -109,7 +121,7 @@ body{
         height: 350px;
         margin: auto auto;
         margin-top: 4%;
-        background: url("../res/bg_triangle.svg") no-repeat 50% 55% / 35%;
+        background: url("../res/bg_triangle.svg") no-repeat 190px 50px / 330px;
     }
         .game-option {
             background-color: #152C4C;
@@ -136,19 +148,9 @@ body{
             border-color: #F0A523;
             background:   #f4f4f4 url("../res/scissors.svg") no-repeat 50% 50% / 50%;
         }
-        .game-board .g-opt2 { align-self: flex-end;}
+        .game-board > .g-opt2 { align-self: flex-end;}
         .game-option:hover { transform: scale(1.1);}
      
-        .chose_box_win {
-             box-shadow: 0 0 2px 20px rgba(0,0,0,.3),
-                         0 0 2px 40px rgba(0,0,0,.2),
-                         0 0 2px 80px rgba(0,0,0,.1);
-             animation: pulse 1.4s ease-in infinite;
-        }
-        .pulse_cicle {
-            animation: pulse .4s ease-in infinite;
-        }
-
     .game-result {
         display: flex;
         justify-content: center;
@@ -182,9 +184,9 @@ body{
             width: 160px;
             background: #f4f4f4;
             border: 1.4px solid #f4f4f4;
-            padding: 2%;
+            padding: 5%;
             margin-top: 10px;
-            font-weight: 400;
+            font-weight: 700;
             font-style: normal;
             font-size: 1rem;
             border-radius: 4px;
