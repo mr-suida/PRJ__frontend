@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width user-scalable=no">
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="src/main.js" defer></script>
+</head> 
+<body>
+    <div class="ghost-window" style="display: none;">  
+        <div class="rules">
+            <button onclick="show_rules()">X</button>
+            <img src="res/rules_1.svg" alt=".."/>
+        </div>
+    </div>
+
+    <main class="t-main">
+        <header class="header-container">
+            <h1>ROCK<br>PAPER<br>SCISSORS</h1>
+            <div class="points-box">
+                <label class="points-label">SCORE</label>
+                <label class="points-value">0</label>
+            </div>
+        </header>
+        <div class="game-options-chose">
+            <div class="chose_box chose_opt1" onclick="game_normal_start('pape')"></div>
+            <div class="chose_box chose_opt2 opt_in_middle" onclick="game_normal_start('rock')"></div>
+            <div class="chose_box chose_opt3" onclick="game_normal_start('scis')"></div>
+        </div>
+        <div class="game-result"  style="display: none;">
+            <div class="result_box">
+                <label>YOU PICKED</label>
+                <div class="chose_box" id="user_chose"></div>
+            </div>
+            <div class="win-box" style="display: none;">
+                <h1 class="win-title">.........</h1>
+                <button class="again-bnt" onclick="game_normal_start_again()">PLAY AGAIN</button>
+            </div>
+            <div class="result_box">
+                <label>HOUSE PICKED</label>
+                <div class="chose_box" id="hose_chose"></div>
+            </div>
+        </div>
+        <button class="bnt-rules" onclick="show_rules()">RULES</button>
+    </main>
+</body>
+</html>
