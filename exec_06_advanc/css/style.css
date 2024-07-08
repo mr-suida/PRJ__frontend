@@ -42,6 +42,7 @@ body{
     height: 100vh;
     background: rgba(0,0,0,.4);
     z-index: 1;
+    cursor: pointer;
 }
     
     .rules {
@@ -176,7 +177,7 @@ body{
             text-align: center;
             font-weight: 700;
             font-style: normal;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             color: #f4f4f4;
         }
         .bnt-again {
@@ -193,8 +194,7 @@ body{
             color: blue;
             cursor: pointer;
         }
-
-   
+ 
     .bnt-rules {
         position: absolute;
         bottom: 10%;
