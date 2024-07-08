@@ -47,6 +47,7 @@ function game_normal_start(opt) {
     if ( opt == "rock" ){ userc.classList.add("g-opt2")};
     if ( opt == "pape" ){ userc.classList.add("g-opt1")};
 
+    $class('.stat-messg').innerText = "HOUSE PLAYING ..."
     hosec.classList.add('pulse-cicle');
     
     setTimeout(()=> {
@@ -70,7 +71,7 @@ function game_normal_start(opt) {
         UPOINTS++;
         $class(".points-value").innerText = UPOINTS;
         return 0;
-    },200);
+    },1200);
  }
 
  function again(){
