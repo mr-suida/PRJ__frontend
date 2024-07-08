@@ -24,24 +24,15 @@
                 <label class="points-value">0</label>
             </div>
         </header>
-        <div class="game-options-chose">
-            <div class="chose_box chose_opt1" onclick="game_normal_start('pape')"></div>
-            <div class="chose_box chose_opt2 opt_in_middle" onclick="game_normal_start('rock')"></div>
-            <div class="chose_box chose_opt3" onclick="game_normal_start('scis')"></div>
+        <div class="game-board">
+            <div class="game-option g-opt1" onclick="game_normal_start('pape')"></div>
+            <div class="game-option g-opt2" onclick="game_normal_start('rock')"></div>
+            <div class="game-option g-opt3" onclick="game_normal_start('scis')"></div>
         </div>
-        <div class="game-result"  style="display: none;">
-            <div class="result_box">
-                <label>YOU PICKED</label>
-                <div class="chose_box" id="user_chose"></div>
-            </div>
-            <div class="win-box" style="display: none;">
-                <h1 class="win-title">.........</h1>
-                <button class="again-bnt" onclick="game_normal_start_again()">PLAY AGAIN</button>
-            </div>
-            <div class="result_box">
-                <label>HOUSE PICKED</label>
-                <div class="chose_box" id="hose_chose"></div>
-            </div>
+        <div class="game-result" style="display: none;">
+            <div><h1 class="user-label">YOUR  PICKED</h1><div class="game-option" id="user_ch"></div></div>
+            <div><h1 class="stat-messg">YOUR  WINNER</h1><button class="bnt-again">PLAY AGAIN</button></div>
+            <div><h1 class="hous-label">HOUSE PICKED</h1><div class="game-option" id="hous_ch"></div></div>
         </div>
         <button class="bnt-rules" onclick="show_rules()">RULES</button>
     </main>
