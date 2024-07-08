@@ -32,53 +32,48 @@ let NORMAL_RULES = {
 }
 
 function game_normal_start(opt) {
-    if (UPOINTS > 5 ) { /* call other version */ }
     let house = OPTIONS[Math.floor(Math.random() * 4)];
-    let userc = $id('user_chose');
-    let hosec = $id('hose_chose');
+    let userc = $id('user_ch');
+    let hosec = $id('hous_ch');
 
-    userc.className = ""; userc.classList.add("chose_box")
-    hosec.className = ""; hosec.classList.add("chose_box")
+    userc.className = ""; userc.classList.add("game-option")
+    hosec.className = ""; hosec.classList.add("game-option")
 
 
-    $class('.game-options-chose').style.display = 'none';
+    $class('.game-board ').style.display = 'none';
     $class('.game-result').style.display = 'flex';
 
-    if ( opt == "scis" ){ userc.classList.add("chose_opt3")};
-    if ( opt == "rock" ){ userc.classList.add("chose_opt2")};
-    if ( opt == "pape" ){ userc.classList.add("chose_opt1")};
+    if ( opt == "scis" ){ userc.classList.add("g-opt3")};
+    if ( opt == "rock" ){ userc.classList.add("g-opt2")};
+    if ( opt == "pape" ){ userc.classList.add("g-opt1")};
 
-    hosec.classList.add('pulse_cicle');
+    hosec.classList.add('pulse-cicle');
     
     setTimeout(()=> {
-        $class(".win-box").style.display = "block";
-        if ( house == "scis" ){ hosec.classList.add("chose_opt3")};
-        if ( house == "rock" ){ hosec.classList.add("chose_opt2")};
-        if ( house == "pape" ){ hosec.classList.add("chose_opt1")};
+        hosec.classList.remove('pulse-cicle');
+        if ( house == "scis" ){ hosec.classList.add("g-opt3")};
+        if ( house == "rock" ){ hosec.classList.add("g-opt2")};
+        if ( house == "pape" ){ hosec.classList.add("g-opt1")};
         
         if ( opt == house ) {
-            $class('.win-title').innerText = "NO WINNER"
-            hosec.classList.remove('pulse_cicle');
+            $class('.stat-messg').innerText = "NO WINNER"
             return 0;
         }
         if ( NORMAL_RULES[opt] == house ) {
-             $class('.win-title').innerText = "YOU LOSER"
-             hosec.classList.remove('pulse_cicle');
-             hosec.classList.add('chose_box_win')
+             $class('.stat-messg').innerText = "YOU LOSER"
+             hosec.classList.add('win-circle')
              return 0;
         }
 
-        $class('.win-title').innerText = "YOU WINNER"
-        hosec.classList.remove('pulse_cicle');
-        userc.classList.add('chose_box_win')
+        $class('.stat-messg').innerText = "YOU WINNER"
+        userc.classList.add('win-circle')
         UPOINTS++;
         $class(".points-value").innerText = UPOINTS;
         return 0;
-    },1500);
+    },200);
  }
 
- function game_normal_start_again() {
-    $class('.game-options-chose').style.display = 'flex';
+ function again(){
+    $class('.game-board').style.display = 'flex';
     $class('.game-result').style.display = 'none';
-    $class(".win-box").style.display = "none";
 }
