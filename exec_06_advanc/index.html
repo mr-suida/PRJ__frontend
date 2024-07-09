@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width user-scalable=no">
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/mobil.css"/>
     <script src="src/main.js" defer></script>
 </head> 
 <body>
     <div class="ghost-window" style="display: none;" onclick="show_rules()">  
         <div class="rules">
-            <button>X</button>
             <img src="res/rules_1.svg" alt=".."/>
         </div>
     </div>
@@ -30,9 +30,18 @@
             <div class="game-option g-opt3" onclick="game_normal_start('scis')"></div>
         </div>
         <div class="game-result" style="display: none;">
-            <div><h1 class="user-label">YOUR  PICKED</h1><div class="game-option" id="user_ch"></div></div>
-            <div><h1 class="stat-messg">YOUR  WINNER</h1><button onclick="again()" class="bnt-again">PLAY AGAIN</button></div>
-            <div><h1 class="hous-label">HOUSE PICKED</h1><div class="game-option" id="hous_ch"></div></div>
+            <div class="result-box">
+                <h1 class="user-label">YOUR  PICKED</h1>
+                <div id="user_ch"></div>
+            </div>
+            <div class="result-box" id="results-box">
+                <h1 class="stat-messg">YOUR  WINNER</h1>
+                <button onclick="again()" class="bnt-again">PLAY AGAIN</button>
+            </div>
+            <div class="result-box">
+                <h1 class="user-label">HOUSE PICKED</h1>
+                <div id="hous_ch"></div>
+            </div>
         </div>
         <button class="bnt-rules" onclick="show_rules()">RULES</button>
     </main>
