@@ -6,9 +6,8 @@
         cursor: pointer;
     }
 
-    .header-container h1 {
-        font-size: 1.2rem;
-    }
+    .header-container {margin-top: 15%;}
+    .header-container h1 { font-size: 1.2rem;}
      .points-box {
             width: 30%;
             border-radius: 5px;
@@ -19,13 +18,14 @@
         .points-value { font-size: 1.9rem;}
 
     .game-board {
+/*        border: 12px solid red;*/
         width: 90%;
-        height: 240px;
+        height: 300px;
         margin-top: 20%;
     }
         .game-board > .game-option {
             width: 290px;
-            height: 130px; 
+            height: 120px; 
         } 
         .game-option {
             border-width: 10px;
