@@ -1,0 +1,59 @@
+
+@media only screen and (max-width: 768px) {
+    .ghost-window {
+        background-color: #f4f4f4;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .header-container h1 {
+        font-size: 1.2rem;
+    }
+     .points-box {
+            width: 30%;
+            border-radius: 5px;
+            margin: 0 0 0 70%;
+            padding: 4% 0;
+        }
+        .points-label { font-size: 1.2rem; }
+        .points-value { font-size: 1.9rem;}
+
+    .game-board {
+        width: 90%;
+        height: 240px;
+        margin-top: 20%;
+    }
+        .game-board > .game-option {
+            width: 290px;
+            height: 130px; 
+        } 
+        .game-option {
+            border-width: 10px;
+            width: 150px;
+            height: 140px;
+        }
+
+        
+    .game-result {
+        grid-template-areas: 
+            "div_a div_b"
+            "div_c div_c";
+        margin-top: 17%;
+        column-gap: 15%;
+        margin-top: 20%;
+    }
+        .result-box { flex-direction: column-reverse;}
+        .result-box:nth-child(1) {grid-area: div_a;}
+        .result-box:nth-child(2) {grid-area: div_c; flex-direction: column;}
+        .result-box:nth-child(3) {grid-area: div_b;}
+        .user-label { margin-top: 35px;}
+        .stat-messg { 
+            margin-top: 15%;
+            font-size: 1.2rem 
+        }
+        .bnt-again {            
+            padding: 5%;
+            margin: 3% auto;
+            font-size: .9rem;
+        }
+}
