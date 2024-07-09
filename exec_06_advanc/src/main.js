@@ -35,23 +35,25 @@ function game_normal_start(opt) {
     let house = OPTIONS[Math.floor(Math.random() * 4)];
     let userc = $id('user_ch');
     let hosec = $id('hous_ch');
+    $id('results-box').style.display = "none";
 
     userc.className = ""; userc.classList.add("game-option")
     hosec.className = ""; hosec.classList.add("game-option")
 
 
     $class('.game-board ').style.display = 'none';
-    $class('.game-result').style.display = 'flex';
+    $class('.game-result').style.display = 'grid';
 
     if ( opt == "scis" ){ userc.classList.add("g-opt3")};
     if ( opt == "rock" ){ userc.classList.add("g-opt2")};
     if ( opt == "pape" ){ userc.classList.add("g-opt1")};
 
-    $class('.stat-messg').innerText = "HOUSE PLAYING ..."
     hosec.classList.add('pulse-cicle');
     
     setTimeout(()=> {
         hosec.classList.remove('pulse-cicle');
+        $id('results-box').style.display = "flex";
+
         if ( house == "scis" ){ hosec.classList.add("g-opt3")};
         if ( house == "rock" ){ hosec.classList.add("g-opt2")};
         if ( house == "pape" ){ hosec.classList.add("g-opt1")};
