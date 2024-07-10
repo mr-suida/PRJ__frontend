@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title> Advice Generator </title>
+    <script src="src/main.js"></script>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <meta name="description" content="Get random advice with this insightful project. Discover wisdom and guidance through a diverse collection of advice provided by an API. Enhance your day with a dose of inspiration!">
+</head>
+<body>
+    <main id="t-main">
+        <h1> ADVICE <span class='adv-id' id="advice-id">#117</span></h1>
+        <p class='adv-msg' id="advice-tx">
+            Hi, this is a secret message
+        </p>
+        <picture>
+            <source srcset="res/div_mob.svg" media="(max-width: 767px) and (orientation: portrait)"/>
+            <img src="res/div_desk.svg" alt="" alt="h line imagem"/>
+        </picture>
+
+        <div class="advice-bnt-box">
+            <img alt="button image" id="advice-bnt" class="adv-bnt" src="res/bnt.svg" onclick="getAdivice()"/>
+        </div>
+    </main>
+</body>
+</html>
