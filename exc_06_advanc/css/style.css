@@ -30,7 +30,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-/*    outline: 1px solid yellow;*/
+    outline: 1px solid yellow;
 }
 
 body{
@@ -105,15 +105,35 @@ body{
                 font-size: 1.9rem;
             }
     
+    .game-board-bonus {
+        position: relative;
+        display: block;
+        width: 550px;
+        height: 520px;
+        margin: auto auto;
+    }
+        .pentagon {
+            width: 290px;
+            display: block;
+            position: absolute;
+            top: 80px; left: 130px;
+        }
+        .game-board-bonus .g-opt3 {top: 0px; left: 195px;} /*scic*/
+        .game-board-bonus .g-opt2 {bottom: 60px; left: 295px;} /*rock*/
+        .game-board-bonus .g-opt4 {left: 96px; bottom: 60px;} /*lizard*/
+        .game-board-bonus .g-opt5 {top: 110px; left: 30px;} /*spock*/
+        .game-board-bonus .g-opt1 {left: 370px; top: 110px;} /*paper*/
+
     .game-board {
-        display: flex;
-        justify-content: center;
-        width: 70%;
+        position: relative;
+        display: block;
+        width: 550px;
         height: 350px;
         margin: auto auto;
         margin-top: 4%;
     }
         .game-option {
+            position: absolute;
             background-color: #152C4C;
             box-shadow: inset 1px 10px 10px rgba(0, 0, 0, 0.5);
             border: 17px solid #152c4c; 
@@ -122,24 +142,27 @@ body{
             height: 160px;
             border-radius: 50%;
             cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: 50%;
+            background-color: #f4f4f4;
         }
-        
-        .g-opt1 {
-            border-color: #5671F3; 
-            background:   #f4f4f4 url("../res/paper.svg") no-repeat 50% 50% / 50%;
+        .triangle {
+            width: 300px;
+            display: block;
+            position: absolute;
+            top: 65px; left: 120px;
         }
-        
-        .g-opt2 {
-            border-color:#E44A66;
-            background:  #f4f4f4 url("../res/rock.svg") no-repeat 50% 50% / 50%;
-        }
-
-        .g-opt3 { 
-            border-color: #F0A523;
-            background:   #f4f4f4 url("../res/scissors.svg") no-repeat 50% 50% / 50%;
-        }
-        .game-board > .g-opt2 { align-self: flex-end;}
+        .game-board .g-opt1 {left: 90px;} /*paper*/
+        .game-board .g-opt3 {left: 310px;} /*scic*/
+        .game-board .g-opt2 {left: 198px; bottom: 10px;}  /*rock*/
         .game-option:hover { transform: scale(1.1);}
+        
+    .g-opt1 { border-color: #5671F3; background-image: url("../res/paper.svg");}
+    .g-opt2 { border-color: #E44A66; background-image: url("../res/rock.svg");}
+    .g-opt3 { border-color: #F0A523; background-image: url("../res/scissors.svg");}
+    .g-opt4 { border-color: #895BE0; background-image: url("../res/lizard.svg");}
+    .g-opt5 { border-color: #4DBED2; background-image:url("../res/spock.svg");}
      
     .game-result {
         grid-template-areas: "div_a div_b div_c";
@@ -149,6 +172,7 @@ body{
         margin: auto auto;
         margin-top: 7%;
     }
+        .game-result .game-option {position: inherit;}
         .result-box {
             justify-content: center;
             display: flex;
@@ -156,10 +180,6 @@ body{
             justify-content: center;
             align-content: center;
         }
-        
-        .result-box:nth-child(1) {grid-area: div_a;}
-        .result-box:nth-child(2) {grid-area: div_b;}
-        .result-box:nth-child(3) {grid-area: div_c;}
         
         .user-label {
             width: 100%;

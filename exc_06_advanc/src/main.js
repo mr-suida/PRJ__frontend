@@ -77,6 +77,6 @@ function game_normal_start(opt) {
  }
 
  function again(){
-    $class('.game-board').style.display = 'flex';
+    $class('.game-board').style.display = 'block';
     $class('.game-result').style.display = 'none';
 }

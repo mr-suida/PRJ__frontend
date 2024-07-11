@@ -18,22 +18,38 @@
         .points-value { font-size: 1.9rem;}
 
     .game-board {
-/*        border: 12px solid red;*/
-        width: 90%;
-        height: 300px;
+        width: 390px;
+        height: 350px;
         margin-top: 20%;
     }
-        .game-board > .game-option {
-            width: 290px;
-            height: 120px; 
-        } 
-        .game-option {
-            border-width: 10px;
-            width: 150px;
-            height: 140px;
-        }
+        .triangle { top: 65px; left: 40px;}
+        .game-board .g-opt1 {left: 0px;} /*paper*/
+        .game-board .g-opt3 {left: 220px;} /*scic*/
+        .game-board .g-opt2 {left: 115px; bottom: 10px;}  /*rock*/
+        .game-option:hover { transform: scale(1.1);}
 
-        
+     .game-board-bonus {
+        width: 390px;
+        border: 3px solid red;
+        height: 520px;
+    }
+        .game-board-bonus .game-option {
+            width: 120px;
+            height: 120px;
+            border-width: 8px;
+        }
+        .pentagon {
+            width: 290px;
+            display: block;
+            position: absolute;
+            top: 95px; left: 50px;
+        }
+        .game-board-bonus .g-opt3 {top: 40px; left: 140px;} /*scic*/
+        .game-board-bonus .g-opt2 {bottom: 70px; left: 220px;} /*rock*/
+        .game-board-bonus .g-opt4 {left: 65px; bottom: 70px;} /*lizard*/
+        .game-board-bonus .g-opt5 {top: 155px; left: 10px;} /*spock*/
+        .game-board-bonus .g-opt1 {left: 260px; top: 155px;} /*paper*/
+
     .game-result {
         grid-template-areas: 
             "div_a div_b"
