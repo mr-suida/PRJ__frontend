@@ -6,9 +6,12 @@
         cursor: pointer;
     }
 
-    .header-container {margin-top: 15%;}
-    .header-container h1 { font-size: 1.2rem;}
-     .points-box {
+    .header-container {margin-top: 8%;}
+    .header-title {
+            width: 100%;
+            margin: auto;
+        }
+        .points-box {
             width: 30%;
             border-radius: 5px;
             margin: 0 0 0 70%;
@@ -71,4 +74,8 @@
             margin: 3% auto;
             font-size: .9rem;
         }
+    .bnt-rules {
+        margin-top: 25%;
+        margin-left: 69%;
+    }
 }

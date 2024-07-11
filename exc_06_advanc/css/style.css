@@ -30,19 +30,20 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-/*    outline: 1px solid yellow;*/
+/*    outline: 1px solid yellow;*/ 
 }
 
 body{
     position: relative;
     width: 100%;
-    height: 98vh;
+    padding-bottom: 10%;
     background: radial-gradient(circle, #1f3756 50%, #141539);
     font-family: "Barlow Semi Condensed", sans-serif;
+/*    border: 2px solid red;*/
 }
 
 .ghost-window {
-    position: absolute;
+    position: fixed;
     top: 0; left: 0;
     width: 100%;
     height: 100vh;
@@ -65,7 +66,7 @@ body{
     position: relative;
     display: block;
     width: min(1024px,95%);
-    height: 90%;
+    height: 600px;
     margin: auto auto;
 }
     .header-container {
@@ -75,21 +76,21 @@ body{
         border: 3px solid hsl(217, 16%, 45%);
         border-radius: 10px;
         padding: 15px;
-        margin: 5% auto;
+        margin: 2% auto;
     }
-        .header-container h1 {
-            font-weight: 700;
-            font-style: normal;
-            font-size: 1.7rem;
-            color: #f4f4f4;
+        .header-title {
+            width: 75%;
+            margin: auto;
         }
         .points-box {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
             background: whitesmoke;
             width: 25%;
             border-radius: 10px;
             margin: 0 0 0 70%;
-            padding: 2% 0;
         }
             .points-label,.points-value {
                 text-align: center;
@@ -97,7 +98,7 @@ body{
                 display: block;
                 font-weight: 700;
                 font-style: normal;
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 color: blue;
             }
             .points-value  {
@@ -111,6 +112,7 @@ body{
         width: 550px;
         height: 520px;
         margin: auto auto;
+        transition: .4s ease-in;
     }
         .pentagon {
             width: 290px;
@@ -131,6 +133,7 @@ body{
         height: 350px;
         margin: auto auto;
         margin-top: 4%;
+        transition: .4s ease-in;
     }
         .game-option {
             position: absolute;
@@ -169,6 +172,7 @@ body{
         gap: 0px;
         justify-content: center;
         width: 100%;
+        transition: .4s ease-in;
         margin: auto auto;
         margin-top: 7%;
     }
@@ -211,19 +215,17 @@ body{
         }
  
     .bnt-rules {
-        position: absolute;
-        display: none;
+        display: block;
         background: transparent;
         border: 1.4px solid #f4f4f4;
         padding: 9px 4%;
-        font-weight: 400;
+        font-weight: 700;
         font-style: normal;
-        font-size: .9rem;
+        font-size: 1rem;
         cursor: pointer;
-        color: #f4f4f4;
-        bottom: 20px;
-        right: 10%;
-
+        color: #f3f3f3;
+        margin-left: 65%;
+        margin-top: 4%;
     }
         .bnt-rules:hover {
             background-color: #f4f4f4;

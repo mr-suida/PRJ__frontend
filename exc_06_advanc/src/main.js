@@ -32,7 +32,7 @@ let NORMAL_RULES = {
 }
 
 function game_normal_start(opt) {
-
+    
     if (UPOINTS >= 5 ) {
         game_bonus_start(opt)
         return;
@@ -131,6 +131,8 @@ function game_normal_start(opt) {
 
  function again(){
      if (UPOINTS >= 5 ) {
+        $class('.header-title').src = 'res/bonus_logo.svg'
+        $class('.rules-img').src = 'res/rules_2.svg'
         $class('.game-board').style.display = 'none';
         $class('.game-result').style.display = 'none';
         $class('.game-board-bonus').style.display = 'block';
