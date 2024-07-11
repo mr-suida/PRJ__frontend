@@ -30,7 +30,6 @@
 
      .game-board-bonus {
         width: 390px;
-        border: 3px solid red;
         height: 520px;
     }
         .game-board-bonus .game-option {
