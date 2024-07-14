@@ -129,12 +129,32 @@
 
 <script setup>
   import { ref } from 'vue';
+  import { Trie } from '@/libs/tree_trie.js';
+
   import appResults from './cps/app_results.vue'
-  // import appDetails from './cps/app_details.vue'
 
   const current_compt = ref(appResults)
   const current_props = ref({name:'roberto',idade:27})
   const current_regio = ref(false)
+
+  window.onload = function() {
+    // to test trie libs
+    const data = [
+        { name: 'aa', etc: '...' },
+        { name: 'ab', etc: '...' },
+        { name: 'ac', etc: '...' },
+        { name: 'ba', etc: '...' },
+    ];
+    
+   const trie = new Trie();
+   data.forEach((item,index)=>{
+        trie.insert(item.name,index)
+   })
+
+   const results = trie.search('b')
+   console.log(results)
+
+  }
 
   const update_region = (new_value)=>{ current_regio.value = new_value }
 </script>
