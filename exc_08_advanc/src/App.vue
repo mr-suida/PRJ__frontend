@@ -10,7 +10,7 @@
     
     <div class="search-fields">
       <div class="search-field">
-        <input type="url" placeholder="Search for a cauntry"/>
+        <input type="url" placeholder="Search for a cauntry" @keyup="filter($event.target.value)"/>
         <ul class="search-result">
             <li><img class='result-ico' src='https://flagcdn.com/th.svg' alt=''/><span class='result-lb'></span>brasil</li>
             <li><img class='result-ico' src='https://flagcdn.com/th.svg' alt=''/><span class='result-lb'></span>argentina</li>
@@ -19,16 +19,16 @@
       </div>
       <select class="select-field" @change="update_region($event.target.value)">
         <option disabled selected hidden>Filter By Region</option>
-        <option value='all'>All</option>
-        <option value='africa'>Africa</option>
-        <option value='america'>America</option>
-        <option value='asia'>Ásia</option>
-        <option value='europe'>Europe</option>
-        <option value='oceania'>Oceania</option>
+        <option value='All'>All</option>
+        <option value='Africa'>Africa</option>
+        <option value='Americas'>America</option>
+        <option value='Asia'>Ásia</option>
+        <option value='Europe'>Europe</option>
+        <option value='Oceania'>Oceania</option>
       </select>
     </div>
       
-    <component :is="current_compt" :data="current_props"/>
+    <component :is="current_component" :data="current_api_props"/>
 </template>
 
 <style scoped>
@@ -87,6 +87,7 @@
       .search-result {
           position: absolute;
           width: 99%;
+          height: 0;
           overflow: hidden;
           list-style: none;
           margin-top: 2%;
@@ -128,33 +129,49 @@
 </style>
 
 <script setup>
-  import { ref } from 'vue';
-  import { Trie } from '@/libs/tree_trie.js';
+    import { ref } from 'vue';
+    import { Trie } from '@/libs/tree_trie.js';
+    import appResults from './cps/app_results.vue'
 
-  import appResults from './cps/app_results.vue'
-
-  const current_compt = ref(appResults)
-  const current_props = ref({name:'roberto',idade:27})
-  const current_regio = ref(false)
-
-  window.onload = function() {
-    // to test trie libs
-    const data = [
-        { name: 'aa', etc: '...' },
-        { name: 'ab', etc: '...' },
-        { name: 'ac', etc: '...' },
-        { name: 'ba', etc: '...' },
-    ];
+    const current_component = ref(appResults)
+    const current_api_props = ref({})
+    const current_region    = ref('All')  
     
-   const trie = new Trie();
-   data.forEach((item,index)=>{
-        trie.insert(item.name,index)
-   })
+    const api_array = ref([])
+    const trie = new Trie();
 
-   const results = trie.search('b')
-   console.log(results)
+    window.onload = async function() {
+        let buffer_data = localStorage.getItem('contries_api_data');
 
-  }
+        if (buffer_data == null ) {
+            await fetch('https://restcountries.com/v3.1/all').then((res)=> res.text()).then((text)=>{
+                localStorage.setItem('contries_api_data',text);
+            })
+        }
 
-  const update_region = (new_value)=>{ current_regio.value = new_value }
+        buffer_data = localStorage.getItem('contries_api_data');
+        api_array.value = JSON.parse(buffer_data)
+      
+        api_array.value.forEach((item,index)=>{
+            trie.insert(item.name.common.toLowerCase().replaceAll(' ',''),index)
+        })
+        current_api_props.value = api_array.value
+    }
+
+    const filter = function(value) {
+        const results = trie.search(value)
+        const countries = results.map( (x) => {
+            if ( current_region.value == 'All' ) return api_array.value[x];
+            if ( current_region.value == api_array.value[x].region ) {
+                return api_array.value[x];
+            }
+            return false;
+        });
+        // countries.forEach((x)=>{
+        //     if(x != false ) console.log('name: ', x.name.common,'region: ', x.region);
+        // })
+        current_api_props = countries;
+    }
+
+  const update_region = (new_value)=>{ current_region.value = new_value }
 </script>
