@@ -5,15 +5,9 @@
       <button> Dark Mode</button>
     </header>
     <hr/>
-    
     <div class="search-fields">
       <div class="search-field">
         <input type="url" placeholder="Search for a cauntry" @keyup="filter($event.target.value)"/>
-        <ul class="search-result">
-            <li><img class='result-ico' src='' alt=''/><span class='result-lb'></span>brasil</li>
-            <li><img class='result-ico' src='' alt=''/><span class='result-lb'></span>argentina</li>
-            <li><img class='result-ico' src='' alt=''/><span class='result-lb'></span>polonia</li>
-        </ul>
       </div>
       <select class="select-field" @change="update_region($event.target.value)">
         <option disabled selected hidden>Filter By Region</option>
@@ -25,31 +19,37 @@
         <option value='Oceania'>Oceania</option>
       </select>
     </div>
-      
-    <component  v-if="current_api_props.length" :is="current_component" :data_props="current_api_props"/>
+    <component  
+        v-if="current_api_props.length" 
+        :is="current_component" 
+        :data_props="current_api_props"
+        @flag_click="describle"
+    />
 </template>
 
 <style scoped>
   header {
-    background-color: var(--bgcolor);
+    background-color: #fff;
     color: var(--fgcolor);
     align-items: center;
     display: flex;
     width: min(1200px,95%);
     height: 70px;
     margin: auto auto;
+    padding: 0 8px;
   }
-    header > h1 { font: bolder 1.1rem/1 monospace;}
+    header > h1 { font: 800 1.2rem/1 "Nunito Sans";}
     header > button {
       text-align: right;
       padding: 10px 0 10px 3%;
       margin-left: auto;
       cursor: pointer;
-      font: bolder .9rem/1 monospace;
+      font: 600 .9rem/1 "Nunito Sans";
       border: none;
       outline: none;
+      width: 115px;
       color: var(--fgcolor);
-      background: var(--bgcolor) url('res/moon.svg') 10px 50% / 15% no-repeat;
+      background: transparent url('res/moon.svg') 20% 50% / 14% no-repeat;
     }
     hr {
       border: none;
@@ -58,59 +58,31 @@
     }
     .search-fields {
       display: flex;
+      align-items: center;
       width: min(1200px,95%);
       margin: 2% auto auto;
+      padding: 0 8px;
     }
       .search-field {
         position: relative;
         display: block;
-        width: 300px;
+        width: 440px;
         padding: 2px;
+        box-shadow: 0 0 5px var(--swcolor);
         background-color: var(--bgcolor);
-        border-radius: 3px;
-        background: url('res/lupe.svg') 5% 45% / 9% no-repeat;
+        border-radius: 4px;
+        background: url('res/lupe.svg') 5% 45% / 6% no-repeat;
       }
         .search-field > input {
           display: block;
           border: none;
-          width: 100%;
+          width: 90%;
           padding: 14px;
-          text-align: center;
           background: none;
-          box-shadow: 0 0 4px var(--swcolor);
           outline: none;
           margin-left: auto;
-          font: 500 .8rem/1 monospace;
+          font: 700 .9rem/1 "Nunito Sans";
         }
-      .search-result {
-          position: absolute;
-          width: 99%;
-          height: 0;
-          overflow: hidden;
-          list-style: none;
-          margin-top: 2%;
-          background: #fff;
-          box-shadow: 0 0 4px var(--swcolor);
-          font: 400 .8rem/1 monospace;
-      }
-          .search-result li {
-            display: flex;
-            align-items: center;
-            margin: 0;
-            width: 100%;
-            padding: 5%;
-            cursor: pointer;
-          }
-          .search-result li:hover {
-            background-color: #c4c4c4;
-          }
-              .result-ico {
-                display: block;
-                width: 9%;
-              }
-              .result-lb {
-                margin-left: 5%;
-              }
         .select-field {
             border: none;
             background: none;
@@ -120,10 +92,12 @@
             margin-left: auto;
             border-radius: 4px;
             box-shadow: 0 0 4px var(--swcolor);
-            font: 700 .8rem/1 monospace;
+            font: 500 .8rem/1 "Nunito Sans";
             cursor: pointer;
-            margin-bottom: 10px;
         }
+            .search-field :option {
+                color: red;
+            }
 </style>
 
 <script setup>
@@ -134,6 +108,7 @@
     const current_component = ref(markRaw(appResults))
     const current_api_props = ref([])
     const current_region    = ref('All')  
+    const search_value      = ref('')  
     
     const api_array = ref([])
     const trie = new Trie();
@@ -165,10 +140,23 @@
                 return ret
             },[]);
             current_api_props.value = countries;
-        }else 
-            current_api_props.value = api_array.value;
+        }else {
+            current_api_props.value = api_array.value.reduce((ret,x)=> {
+                console.log(x.region)
+                if ( current_region.value == x.region || current_region.value == 'All') ret.push(x);
+                return ret
+            },[]);
+        }
+        search_value.value = value
+    }
+    
+    const describle = function(index) {
+        alert(index)
     }
 
     onMounted(() => load_countries())
-    const update_region = (new_value)=>{ current_region.value = new_value }
+    const update_region = (new_value)=> { 
+        current_region.value = new_value
+        filter(search_value.value)
+    }
 </script>
