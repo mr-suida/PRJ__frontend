@@ -5,7 +5,7 @@
       <button> Dark Mode</button>
     </header>
     <hr/>
-    <div class="search-fields">
+    <div class="search-fields" v-if='search_bview'>
       <div class="search-field">
         <input type="url" placeholder="Search for a cauntry" @keyup="filter($event.target.value)"/>
       </div>
@@ -19,8 +19,7 @@
         <option value='Oceania'>Oceania</option>
       </select>
     </div>
-    <component  
-        v-if="current_api_props.length" 
+    <component
         :is="current_component" 
         :data_props="current_api_props"
         @flag_click="describle"
@@ -104,11 +103,13 @@
     import { ref, onMounted ,markRaw} from 'vue';
     import { Trie } from '@/libs/tree_trie.js';
     import appResults from './cps/app_results.vue'
+    import appDetails from './cps/app_details.vue'
 
     const current_component = ref(markRaw(appResults))
     const current_api_props = ref([])
     const current_region    = ref('All')  
-    const search_value      = ref('')  
+    const search_value      = ref('')
+    const search_bview      = ref(true) 
     
     const api_array = ref([])
     const trie = new Trie();
@@ -151,7 +152,10 @@
     }
     
     const describle = function(index) {
-        alert(index)
+        search_bview.value = false;
+        current_component.value = markRaw(appDetails)
+        current_api_props.value = current_api_props.value[index]
+        // console.log(current_api_props.value)
     }
 
     onMounted(() => load_countries())

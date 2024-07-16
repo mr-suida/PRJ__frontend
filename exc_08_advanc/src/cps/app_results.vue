@@ -18,7 +18,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         width: min(1200px,95%);
-        height: 540px;
+        height: 70vh;
         overflow: auto;
         gap: 22px;
         margin: 2% auto;
