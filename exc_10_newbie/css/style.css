@@ -1,0 +1,106 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #8bacda;
+}
+
+body{background-color:#0d192b;}
+
+section.card {
+    width: min(330px,90%);
+    margin: 15% auto;
+    overflow: hidden;
+    background: #14253d;
+    border-radius: 17px;
+    padding: 2.5%;
+}
+
+.card #image-box {
+    width: 100%;
+    border-radius: 17px;
+    overflow: hidden;
+    background-image: url('../res/eye.svg');
+    background-repeat: no-repeat;
+    background-size: 20% 20%;
+    background-color: #00fff7;
+    background-position: 50% 50%;
+}
+
+.card #image-box img { 
+    width: 100%;
+    vertical-align: middle;
+}
+.card #image-box img:hover {filter: opacity(.5);}
+
+.card #title {
+    margin-top: 10%;
+    font: 600 1.5rem/1 'Outfit', sans-serif;
+    color: #f2f2f2;
+}
+
+.card #title:hover {color: #00fff7;}
+
+.card #resume{
+    margin-top: 6%;
+    font: 600 1rem/1.5 'Outfit', sans-serif;
+}
+
+.card #info{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 3% 0;
+    margin-top: 5%;
+    border-bottom: 1px solid #2f415b;
+    font: 600 .9rem/1 'Outfit', sans-serif;
+}
+
+#info #money, #timer{
+    display: block;
+    width: 100%;
+    padding: 2% 0;
+    text-align: right;
+}
+#info #money{
+    text-align: left;
+    color: #00fff7;
+    text-transform: uppercase;
+}
+
+#info #money::before{
+    content: url('../res/ethereum.svg');
+    margin-right: 1%;
+    vertical-align: middle;
+}
+
+#info #timer::before {
+    content: url('../res/clock.svg');
+    vertical-align: middle;
+    margin-right: 2%;
+}
+
+.card #author {
+    font: 600 1rem/1 'Outfit', sans-serif;
+    margin: 7% 0;
+}
+
+#author #avatar {
+    width: 13%;
+    margin: auto;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    border-radius: 100%;
+}
+
+#author #link {
+    margin-left: 3%;
+    text-decoration: none;
+}
+
+#author #link #name{color:#f2f2f2;}
+#author #link #name:hover{color: #00fff7;}
+
+@media (max-width: 567px){section.card{padding: 5% 5%;}}
