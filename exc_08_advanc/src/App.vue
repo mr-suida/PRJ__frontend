@@ -1,6 +1,4 @@
 
-
-
 <template>
     <header>
       <h1>Where in the Word?</h1>
@@ -12,9 +10,9 @@
       <div class="search-field">
         <input type="url" placeholder="Search for a cauntry" @keyup="filter($event.target.value)"/>
         <ul class="search-result">
-            <li><img class='result-ico' src='https://flagcdn.com/th.svg' alt=''/><span class='result-lb'></span>brasil</li>
-            <li><img class='result-ico' src='https://flagcdn.com/th.svg' alt=''/><span class='result-lb'></span>argentina</li>
-            <li><img class='result-ico' src='https://flagcdn.com/th.svg' alt=''/><span class='result-lb'></span>polonia</li>
+            <li><img class='result-ico' src='' alt=''/><span class='result-lb'></span>brasil</li>
+            <li><img class='result-ico' src='' alt=''/><span class='result-lb'></span>argentina</li>
+            <li><img class='result-ico' src='' alt=''/><span class='result-lb'></span>polonia</li>
         </ul>
       </div>
       <select class="select-field" @change="update_region($event.target.value)">
@@ -28,7 +26,7 @@
       </select>
     </div>
       
-    <component :is="current_component" :data="current_api_props"/>
+    <component  v-if="current_api_props.length" :is="current_component" :data_props="current_api_props"/>
 </template>
 
 <style scoped>
@@ -129,18 +127,18 @@
 </style>
 
 <script setup>
-    import { ref } from 'vue';
+    import { ref, onMounted ,markRaw} from 'vue';
     import { Trie } from '@/libs/tree_trie.js';
     import appResults from './cps/app_results.vue'
 
-    const current_component = ref(appResults)
-    const current_api_props = ref({})
+    const current_component = ref(markRaw(appResults))
+    const current_api_props = ref([])
     const current_region    = ref('All')  
     
     const api_array = ref([])
     const trie = new Trie();
 
-    window.onload = async function() {
+    async function load_countries(){
         let buffer_data = localStorage.getItem('contries_api_data');
 
         if (buffer_data == null ) {
@@ -160,18 +158,13 @@
 
     const filter = function(value) {
         const results = trie.search(value)
-        const countries = results.map( (x) => {
-            if ( current_region.value == 'All' ) return api_array.value[x];
-            if ( current_region.value == api_array.value[x].region ) {
-                return api_array.value[x];
-            }
-            return false;
-        });
-        // countries.forEach((x)=>{
-        //     if(x != false ) console.log('name: ', x.name.common,'region: ', x.region);
-        // })
-        current_api_props = countries;
+        const countries = results.reduce( (ret,x) => {
+            if ( current_region.value == 'All' ) ret.push(api_array.value[x]);
+            if ( current_region.value == api_array.value[x].region ) ret.push(api_array.value[x]);
+            return ret
+        },[]);
+        current_api_props.value = countries;
     }
-
-  const update_region = (new_value)=>{ current_region.value = new_value }
+    onMounted(() => load_countries())
+    const update_region = (new_value)=>{ current_region.value = new_value }
 </script>
