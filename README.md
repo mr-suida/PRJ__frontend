@@ -9,3 +9,5 @@
 | 07 | Advice Generator  | junior | HTML/CSS/JS      |[go](https://mr-suida.github.io/CHL__FrontEnd/exc_07_junior/) |
 | 08 | Rest countrie API | advanc | HTML/CSS/JS/VUE3 |[go](https://mr-suida.github.io/CHL__FrontEnd/exc_08_advanc/) |
 | 09 | Blog preview card | newbie | HTML/CSS         |[go](https://mr-suida.github.io/CHL__FrontEnd/exc_09_newbie/) |
+| 10 | NFT preview card  | newbie | HTML/CSS         |[go](https://mr-suida.github.io/CHL__FrontEnd/exc_10_newbie/) |
+
