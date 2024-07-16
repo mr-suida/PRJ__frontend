@@ -1,7 +1,13 @@
 
 <template>
     <ul class='list-flags'>
-        <p>{{ data.name }} {{data.idade}}</p>
+        <li class='flags-box' v-for='(country,index) in data_props' :key='index'>
+            <img src='' alt='' class='flag-img'/>
+            <h1 class='countrie-name'></h1>
+            <span class='population'><i class='flags-data-value'>{{country.name.common}}</i></span>
+            <span class='region'><i class='flags-data-value'></i></span>
+            <span class='captial'><i class='flags-data-value'></i></span>
+        </li>
     </ul>
 </template>
 
@@ -20,6 +26,9 @@
     import { defineProps } from 'vue';
 
     const props = defineProps({
-        data: Object
+        data_props: Array
     });
+    
+    // console.log(data_props.value)
+
 </script>
