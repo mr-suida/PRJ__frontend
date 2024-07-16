@@ -157,14 +157,18 @@
     }
 
     const filter = function(value) {
-        const results = trie.search(value)
-        const countries = results.reduce( (ret,x) => {
-            if ( current_region.value == 'All' ) ret.push(api_array.value[x]);
-            if ( current_region.value == api_array.value[x].region ) ret.push(api_array.value[x]);
-            return ret
-        },[]);
-        current_api_props.value = countries;
+        if (value.length > 0 ) {
+            const results = trie.search(value)
+            const countries = results.reduce( (ret,x) => {
+                if ( current_region.value == 'All' ) ret.push(api_array.value[x]);
+                if ( current_region.value == api_array.value[x].region ) ret.push(api_array.value[x]);
+                return ret
+            },[]);
+            current_api_props.value = countries;
+        }else 
+            current_api_props.value = api_array.value;
     }
+
     onMounted(() => load_countries())
     const update_region = (new_value)=>{ current_region.value = new_value }
 </script>
