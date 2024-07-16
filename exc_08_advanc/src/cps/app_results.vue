@@ -1,14 +1,12 @@
 
 <template>
     <ul class='list-flags'>
-        <li class='flags-box' v-for='(country,index) in data_props' :key='index'>
+        <li class='flags-box' v-for='(country,index) in data_props' :key='index' @click="$emit('flag_click',index)">
             <img :src='country.flags.png' alt='' class='flag-img'/>
-            <div class='country-data'>
-                <h1 class='countrie-name'></h1>
-                <span class='population'><i class='flags-data-value'>{{country.name.common}}</i></span>
-                <span class='region'><i class='flags-data-value'></i></span>
-                <span class='captial'><i class='flags-data-value'></i></span>
-            </div>
+            <h1 class='countrie-name'>{{country.name.common}}</h1>
+            <span class='labels'>Population: <i class='values'>{{country.population.toLocaleString()}}</i></span>
+            <span class='labels'>Region: <i class='values'>{{country.region}}</i></span>
+            <span class='labels'>Capital: <i class='values'>{{country.capital}}</i></span>
         </li>
     </ul>
 </template>
@@ -22,25 +20,42 @@
         width: min(1200px,95%);
         height: 540px;
         overflow: auto;
-        gap: 25px;
+        gap: 22px;
         margin: 2% auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        padding: 0 8px;
     }
+    .list-flags::-webkit-scrollbar {display: none;}
         .flags-box {
             display: grid;
             overflow: hidden;
-            border: 1px solid #f4f4f4;
             display: block;
-            width: 230px;
-            height: 250px;
-            border-radius: 4px;
+            width: 260px;
+            height: 310px;
+            border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 0 4px var(--swcolor);
-/*            box-shadow: 0 0 4px 2px var(--swcolor), 0 -10px 4px 2px var(--swcolor);*/
+            box-shadow: 0 0 10px var(--swcolor);
         }
             .flag-img {
                 display: block;
                 width: 100%;
-                height: 130px;
+                height: 150px;
+            }
+            .countrie-name {
+                display: block;
+                font: 800 1rem/1 "Nunito Sans";
+                padding: 9%;
+            }
+            .labels {
+                display: block;
+                font: 600 .9rem/1 "Nunito Sans";
+                padding: 2% 9%;
+            }
+            .values {
+                font-style: normal;
+                font: 200 .9rem/1 "Nunito Sans";
+                color: #313131;
             }
 </style>
 
