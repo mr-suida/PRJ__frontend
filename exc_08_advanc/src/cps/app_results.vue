@@ -1,7 +1,7 @@
 
 <template>
     <ul class='list-flags'>
-        <li class='flags-box' v-for='(country,index) in data_props' :key='index' @click="$emit('flag_click',index)">
+        <li v-if='data_props.length' class='flags-box' v-for='(country,index) in data_props' :key='index' @click="$emit('flag_click',index)">
             <img :src='country.flags.png' alt='' class='flag-img'/>
             <h1 class='countrie-name'>{{country.name.common}}</h1>
             <span class='labels'>Population: <i class='values'>{{country.population.toLocaleString()}}</i></span>

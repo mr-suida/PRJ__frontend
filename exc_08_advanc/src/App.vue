@@ -143,7 +143,6 @@
             current_api_props.value = countries;
         }else {
             current_api_props.value = api_array.value.reduce((ret,x)=> {
-                console.log(x.region)
                 if ( current_region.value == x.region || current_region.value == 'All') ret.push(x);
                 return ret
             },[]);
@@ -154,8 +153,20 @@
     const describle = function(index) {
         search_bview.value = false;
         current_component.value = markRaw(appDetails)
-        current_api_props.value = current_api_props.value[index]
-        // console.log(current_api_props.value)
+        
+        const data_props = {
+            flag: current_api_props.value[index].flags.png,
+            name: current_api_props.value[index].name.common,
+            popu: current_api_props.value[index].population.toLocaleString(),
+            regn: current_api_props.value[index].region,api_array,
+            sreg: current_api_props.value[index].subregion,
+            capt: current_api_props.value[index].capital.toString(),
+            tdnm: current_api_props.value[index].tld[0], 
+            lang: Object.values(current_api_props.value[index].languages).toString(),
+            bord: Object.values(current_api_props.value[index].borders),
+
+        }
+        current_api_props.value = data_props
     }
 
     onMounted(() => load_countries())
