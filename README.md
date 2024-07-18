@@ -10,4 +10,5 @@
 | 08 | Rest countrie API | advanc | HTML/CSS/JS/VUE3 |[go](https://mr-suida.github.io/CHL__FrontEnd/exc_08_advanc/dist/) |
 | 09 | Blog preview card | newbie | HTML/CSS         |[go](https://mr-suida.github.io/CHL__FrontEnd/exc_09_newbie/) |
 | 10 | NFT preview card  | newbie | HTML/CSS         |[go](https://mr-suida.github.io/CHL__FrontEnd/exc_10_newbie/) |
+| 11 | 3col preview card | newbie | HTML/CSS         |[go](https://mr-suida.github.io/CHL__FrontEnd/exc_11_newbie/) |
 
