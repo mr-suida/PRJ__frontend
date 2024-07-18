@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section.card-container {
+    border-radius: 11px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: min(926px,80%);
+    margin: 12% auto;
+    overflow: hidden;
+}
+
+.card-container div.card {
+    width: 100%;
+    padding: 15% 0 2% 14%;
+}
+
+.card-a{background-color: #e38826;}
+.card-b{background-color: #006970;}
+.card-c{background-color: #004241;}
+
+div.card .image{
+    width: 25%;
+    cursor: pointer;
+}
+
+div.card .title {
+    font: 700 2.5rem/1 'Big Shoulders Display', cursive;
+    cursor: pointer;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    margin-top: 12%;
+}
+
+div.card .resume {
+    font: 350 .9rem/1.7 'Lexend Deca', sans-serify;
+    width: 80%;
+    text-align: left;
+    margin-top: 12%;
+    color: #fff;
+    height: 150px;
+}
+
+div.card .link {
+    font: 400 0.9rem/1.5 'Lexend Deca', sans-serify;
+    display: block;
+    width: 56%;
+    border: 2px solid #f2f2f2;
+    border-radius: 30px;
+    background-color: #f2f2f2;
+    padding: 4.4% 7%; 
+    text-align: center;
+    text-decoration: none;
+    margin: 22% 0 14% 5%;
+}
+
+div.card .link-a{color: #e38826;}
+div.card .link-b{color: #006970;}
+div.card .link-c{color: #004241;}
+
+div.card .link:hover {
+    background: transparent;
+    color: #f2f2f2;
+}
+
+@media (max-width: 462px) {
+   section.card-container {
+       grid-template-columns: 100%;
+   }
+   
+   div.card .image {width: 20%;}
+   div.card .resume{font-size: 1rem;}
+   div.card .link {margin-top: 20%;font-size: 0.9rem;}
+}
