@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="coll-0">
+        <div class="div_1"></div>
+        <div class="div_2"></div>
+    </div>
+    <div class="div_3"></div>
+    <div class="div_4"></div>
+    <div class="div_5"></div>
+</body>
+<style>
+    *{
+        box-sizing: border-box; border-radius: 10px;
+    }
+    
+    body {
+        width: min(800px,98%);
+        margin: 4% auto; display: flex;
+        flex-wrap: wrap; gap: 1%; 
+        background-color: #444444;
+    }
+        .coll-0 {
+            display: flex;
+            flex-direction: column; gap: 3%;
+            height: 50vh; width: 25%;
+        }
+            .div_1 { background-color: #CC2A97; height: 33vh;}
+            .div_2 { background-color: #352BCC; height: 20vh;}
+        
+        .div_3 { background-color: #2AA5CE; width: 50%;}
+        .div_4 { background-color: #45CC2A; width: 22%;}
+        
+        .div_5 { 
+            background-color: #CC292A; 
+            width: 99%; height: 20vh;
+            margin-top: 1.5%;
+       }
+</style>
+</html>

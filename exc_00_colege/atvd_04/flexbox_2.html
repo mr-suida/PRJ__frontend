@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header><h1>header</h1></header>
+    <main>
+        <h2>main</h2>
+        <ul>
+            <li>item</li><li>item</li>
+            <li>item</li><li>item</li>
+            <li>item</li><li>item</li>
+            <li>item</li><li>item</li>
+            <li>item</li><li>item</li>
+        </ul>
+    </main>
+    <aside>
+        <p>aside</p>
+    </aside>
+    <footer>footer</footer>
+</body>
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0; margin: 0;
+        font: bold 1.1rem/1 Sans;
+        color: #f4f4f4;
+    }
+    header,main,footer,aside,li {
+        border-radius: 10px;
+        box-shadow: inset 1px 1px 5px .5px #171717;  
+    }
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        width: min(1440px,98%);
+        margin: 4% auto; gap: 10px;
+    }
+        header {
+            background-color: #1E90FF;
+            width: 99%; padding: 5%;
+        }
+
+        main {
+            background-color: #3CB371;
+            width: 75%; padding: 2% 1%
+        }
+            h2 {margin: 3% 0 2% 1%}
+            ul {
+                margin-left: 0;
+                display: flex;
+                list-style: none; flex-wrap: wrap;
+            }
+                li {
+                    margin: 1%; padding: 3%;
+                    background-color: #2F8D59;
+                    text-align: center;
+                }
+        aside {
+            background-color: #FF6348;
+            width: 23%;
+        }
+            p { margin-top: 30%; padding: 8px;}
+
+        footer {
+            background-color: #1E90FF;
+            width: 99%; padding: 5%;
+        }
+</style>
+</html>
