@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="div_01">
+        <div class="div_02"></div>
+        <div class="div_03">
+            <div class="div_04"></div>
+            <div class="div_04"></div>
+        </div>
+        <div class="div_05"></div>
+    </div>
+    <div class="div_06"></div>
+    <div class="div_07">
+        <div class="div_08"></div>
+        <div class="div_08"></div>
+    </div>
+    <div class="div_09">
+        <div class="div_11"></div>
+        <div class="div_10">
+            <div class="div_12"></div>
+            <div class="div_12"></div>
+        </div>
+        <div class="div_11"></div>
+    </div>
+</body>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0; padding: 0;
+    }
+
+    body {
+        display: flex; flex-wrap: wrap;
+        width: min(900px,95%); height: 90vh;
+        margin: 10px auto;
+        padding: 2%; gap: 5%;
+        outline: 5px solid #2E8713;
+        background-color: #C7F0C7;
+    }
+
+    .div_01, .div_09 {
+        display: flex; width: 100%;
+        outline: 5px solid #1D03FE;
+        background-color: #ADD8E6;
+        padding: 2%; gap: 20px;
+    }
+        .div_02, .div_05, .div_11 {
+            width: 33%;
+            outline: 5px solid #F67C6E;
+            background-color: #FCDAB9;
+        }
+        .div_03 {
+            display: flex; width: 33%;
+            justify-content: center;
+            align-items: center;
+            padding: 2%;
+            outline: 5px solid #F67C6E;
+            background-color: #FCDAB9;
+        }
+            .div_04, .div_12 {
+                width: 45%; height: 98%;
+                outline: 5px solid #F50206;
+                background-color: #FAC0CB;
+            }
+    .div_06 {
+        width: 47%;
+        outline: 5px solid #A11F20;
+        background-color: #FCDAB9;
+    }
+    .div_07 {
+        display: flex; width: 48%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+        .div_08 {
+            width: 100%;
+            outline: 5px solid #A11F20;
+            background-color: #FCDAB9;
+        }
+    .div_10 {
+        display: flex; width: 33%;
+        justify-content: center;
+        align-items: center; gap: 20px;
+    }
+    .div_11 {
+        outline: 5px solid #8476D7;
+        background-color: #E2DEFF;
+    }
+    .div_12 {
+        outline: 5px solid #F78475;
+        background-color: #FCDAB9;
+    }
+</style>
+</html>
