@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -37,11 +39,11 @@ body {
             .right-area h1 {
                 width: 70%;
                 padding-left: 4%;
-                font: bolder 3rem/1.2 Arial;
+                font: bolder 2.5rem/1.2  "Poppins", Arial;
                 color: #f4f4f4;
             }
             .describe-text {
-                margin-top: 10%;
+                margin-top: 5%;
                 width: 80%;
                 font: normal 1.2rem/1.6 Arial;
                 color: #f4f4f4;
@@ -52,7 +54,7 @@ body {
                 width: 29%;
                 margin: 4% 0;
                 padding: 3%;
-                font: 900 1rem/1.1 Arial;
+                font: 900 1rem/1.1  "Poppins", Arial;
                 border-radius: 30px;
                 background-color: #E980E7;
                 color: #f4f4f4;
