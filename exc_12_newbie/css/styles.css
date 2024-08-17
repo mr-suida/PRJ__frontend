@@ -14,21 +14,53 @@ body {
     main {
         display: flex;
         flex-wrap: wrap;
-        width: min(1440px,98%);
-        margin: 4% auto;
+        width: min(1330px,98%);
+        margin: 2% auto;
     }
-        h1 {
+        main h1 {
             width: 100%;
             height: 10%;
             padding: 2% 0;
         }
-            h1 .header-icon { width: 13rem; }
+            main .header-icon { width: 13rem; }
+        
         .mockups-img {
-            margin-top: 4%;
+            margin-top: 2%;
             width: 40%;
         }
         .right-area {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
             width: 60%;
-            border: 1px solid red;
         }
+            .right-area h1 {
+                width: 70%;
+                padding-left: 4%;
+                font: bolder 3rem/1.2 Arial;
+                color: #f4f4f4;
+            }
+            .describe-text {
+                margin-top: 10%;
+                width: 80%;
+                font: normal 1.2rem/1.6 Arial;
+                color: #f4f4f4;
+                padding-left: 4%;
+            }
+            .bnt-register {
+                display: block;
+                width: 29%;
+                margin: 4% 0;
+                padding: 3%;
+                font: 900 1rem/1.1 Arial;
+                border-radius: 30px;
+                background-color: #E980E7;
+                color: #f4f4f4;
+                box-shadow: 1px 1px 6px #46336E;
+                cursor: pointer;
+                border: 1px solid #E980E7;
+            }
+            .social-links-box {
+                width: 100%;
+                text-align: right;
+            }
