@@ -1,4 +1,34 @@
 
 *{
-    background-color: red;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 1px solid red;
 }
+
+body {
+    width: 100%;
+    height: 99vh;
+    background-color:  #674BB1;
+}
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        width: min(1440px,98%);
+        margin: 4% auto;
+    }
+        h1 {
+            width: 100%;
+            height: 10%;
+            padding: 2% 0;
+        }
+            h1 .header-icon { width: 13rem; }
+        .mockups-img {
+            margin-top: 4%;
+            width: 40%;
+        }
+        .right-area {
+            display: flex;
+            width: 60%;
+            border: 1px solid red;
+        }
