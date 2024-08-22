@@ -1,0 +1,80 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+:root {
+    --max-pc: 90%;
+    --max-px: 980px;
+}
+
+body { height: 98vh;}
+
+header {
+    /* position: fixed; */
+    width: 100%;
+    background-color: #2F2F2F;
+    padding: 1% 0;
+}
+    .header-box {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        padding: 5px;
+        width: min(var(--max-px),var(--max-pc));
+    }
+        .header-box .h-logo { width: 170px;}
+        .header-box .h-link { 
+            flex-grow: 1;
+            text-align: right;
+        }
+            .header-box .h-link a {
+                font: 500 16px/1 Sans;
+                color: #f4f4f4;
+                margin: 0 1%;
+                text-decoration: none;
+                cursor: pointer;
+            }
+.first-section {
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}  
+    .banner-a {
+        display: flex;
+        width: min(var(--max-px),var(--max-pc));
+        margin: 0 auto;
+    }
+        .banner-a-boxL { 
+            width: 60%;
+        }
+            .banner-a-title { font: 600 20px/1 Sans;}
+            .banner-a-descr {
+                margin-top: 10px;
+                width: 95%;
+                font: 200 14px/1.2 Sans; 
+                text-align: justify;
+            }
+            .banner-a-button {
+                width: 150px;
+                font: 600 13px/1.2 Sans; 
+                padding: 14px;
+                border-radius: 10px;
+                border: .9px solid #000;
+                background-color: #32934E;
+                color: #fff;
+                cursor: pointer;
+                margin-top: 10%;
+                box-shadow: 1px 2px 4px #919191;
+            }
+        .banner-a-boxR {
+            width: 40%;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+
+
