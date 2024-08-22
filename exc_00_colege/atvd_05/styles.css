@@ -11,13 +11,13 @@
     --max-px: 980px;
 }
 
+
+
 body { height: 98vh;}
 
 header {
-    /* position: fixed; */
     width: 100%;
     background-color: #2F2F2F;
-    padding: 1% 0;
 }
     .header-box {
         display: flex;
@@ -75,6 +75,53 @@ header {
             border: 1px solid #000;
             cursor: pointer;
         }
+    .banner-b {
+        margin: 0 auto;
+        width: min(var(--max-px),var(--max-pc));
+    }
+        .banner-b-title {
+            font: 600 20px/1 Sans;
+            margin: 10px 0;
+        }
+        .banner-b-grid3box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+            .grid3box-item {
+                width: 30%;
+            }
+                .banner-b-grid3box img {
+                    width: 100%;
+                    border: 1px solid #000;
+                    cursor: pointer;
+                }
+                .banner-b-grid3box h2 {
+                    font: 600 16px/1 Sans;
+                    margin: 5px 0;
+                }
+                .banner-b-grid3box p {
+                    font: 200 13px/1.2 Sans;
+                    text-align: justify;
+                    padding: 10px 0;
+                }
+                .grid3button {
+                    width: 130px;
+                    font: 600 12px/1.2 Sans; 
+                    padding: 10px;
+                    border-radius: 10px;
+                    border: .9px solid #000;
+                    background-color: #32934E;
+                    color: #fff;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    box-shadow: 1px 2px 4px #919191;
+                }
 
 
-
+/* renomear ou resolver depois */
+.nobg-color {
+    background-color: #fff;
+    /* padding: 0 0; isso não devia esta aki */
+}
