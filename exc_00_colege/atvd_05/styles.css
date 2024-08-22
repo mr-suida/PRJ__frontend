@@ -18,6 +18,7 @@ body { height: 98vh;}
 header {
     width: 100%;
     background-color: #2F2F2F;
+    padding: 10px 0;
 }
     .header-box {
         display: flex;
@@ -38,6 +39,10 @@ header {
                 text-decoration: none;
                 cursor: pointer;
             }
+            .header-box .h-link a:hover {
+                color:#32934E;
+                text-decoration: underline;
+            }
 .sections {
     width: 100%;
     background-color: #f4f4f4;
@@ -49,7 +54,7 @@ header {
         margin: 0 auto;
     }
         .banner-a-boxL { 
-            width: 60%;
+            width: 50%;
         }
             .banner-a-title { font: 600 20px/1 Sans;}
             .banner-a-descr {
@@ -71,7 +76,7 @@ header {
                 box-shadow: 1px 2px 4px #919191;
             }
         .banner-a-boxR {
-            width: 40%;
+            width: 50%;
             border: 1px solid #000;
             cursor: pointer;
         }
