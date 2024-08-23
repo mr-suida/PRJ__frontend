@@ -77,7 +77,7 @@ header {
     .banner-b {
         margin: 0 auto;
         /* height: 600px; */
-        border: 1px solid red;
+        /* border: 1px solid red; */
         /* overflow: auto; */
         width: min(var(--max-px),var(--max-pc));}
 
