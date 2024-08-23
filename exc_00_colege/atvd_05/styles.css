@@ -159,8 +159,8 @@ footer {
                             display: block;
                             color: #2F2F2F;
                             text-align: center;
-                            font: 600 23px/1.2 Sans-serif;
-                        }
+                            font: 600 23px/1.2 Sans-serif;}
+
                     .latest-post-title {
                         font: 900 14px/1.2 Sans-serif;
                         color: seashell;
@@ -176,8 +176,7 @@ footer {
 
                             .latest-post-title span a {
                                 font: 900 12px/1.2 Sans-serif;
-                                color:#32934E;
-                            }
+                                color:#32934E;}
 
                 .middle-card-descr {
                     display: block;
