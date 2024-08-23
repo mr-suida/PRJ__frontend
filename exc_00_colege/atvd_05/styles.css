@@ -14,7 +14,7 @@
 header {
     width: 100%;
     background-color: #2F2F2F;
-    padding: 10px 0;
+    padding: 25px 0;
 }
     .header-box {
         display: flex;
@@ -23,7 +23,7 @@ header {
         padding: 5px;
         width: min(var(--max-px),var(--max-pc));}
 
-        .header-box .h-logo { width: 170px;}
+        .header-box .h-logo { width: 170px; cursor: pointer;}
         .header-box .h-link { 
             flex-grow: 1;
             text-align: right;}
@@ -61,7 +61,7 @@ header {
                 width: 150px;
                 font: 600 13px/1.2 Sans; 
                 padding: 14px;
-                border-radius: 10px;
+                border-radius: 5px;
                 border: .9px solid #000;
                 background-color: #32934E;
                 color: #fff;
@@ -76,6 +76,9 @@ header {
 
     .banner-b {
         margin: 0 auto;
+        /* height: 600px; */
+        border: 1px solid red;
+        /* overflow: auto; */
         width: min(var(--max-px),var(--max-pc));}
 
         .banner-b-title {
@@ -107,7 +110,7 @@ header {
                     width: 130px;
                     font: 600 12px/1.2 Sans; 
                     padding: 10px;
-                    border-radius: 10px;
+                    border-radius: 5px;
                     border: .9px solid #000;
                     background-color: #32934E;
                     color: #fff;
