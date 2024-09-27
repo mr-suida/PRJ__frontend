@@ -6,9 +6,7 @@
     const SHOW_CART = ref(false);
 
     
-    const show_cart = ()=> {SHOW_CART.value =! SHOW_CART.value;
-        console.log(SHOW_CART.value)
-    }
+    const show_cart = ()=> {SHOW_CART.value =! SHOW_CART.value;}
 
     const show_menu = ()=> { 
         let obj = document.querySelector('.menu-c')
