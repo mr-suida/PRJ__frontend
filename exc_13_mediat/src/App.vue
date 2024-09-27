@@ -1,6 +1,14 @@
 
 <script setup>
-    //import TheWelcome from './components/TheWelcome.vue'
+    import { ref } from 'vue';
+    import Cart from './comps/cart.vue'
+
+    const SHOW_CART = ref(false);
+
+    
+    const show_cart = ()=> {SHOW_CART.value =! SHOW_CART.value;
+        console.log(SHOW_CART.value)
+    }
 
     const show_menu = ()=> { 
         let obj = document.querySelector('.menu-c')
@@ -33,11 +41,11 @@
             </nav>
         </div>
         <div class="menu-r">
-            <span class='cart-badge'><i>255</i></span>
+            <span @click="show_cart" class='cart-badge'><i>255</i></span>
             <img  class="user-r-icon" src="/profile.png" alt="user icon"/>
         </div>
     </nav>
-    <component></component>
+    <Cart v-if="SHOW_CART"/>
 </template>
 
 <style scoped>
