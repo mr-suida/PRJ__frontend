@@ -16,9 +16,9 @@
        height: 95vh;
        background-color: #fff;
        background-image: url('res/src.gif');
-       background-size: 230px;
+       background-size: 225px;
        background-repeat: no-repeat;
-       background-position: 50% 42vh;
+       background-position: 50% 40vh;
       }
     </style>
   </head>
@@ -28,7 +28,9 @@
     let isPlay = false;
     document.addEventListener('click',()=> {
       if (isPlay == false ) {
-          document.getElementById('body').style.display = 'flex';    
+          setTimeout(()=>{
+              document.getElementById('body').style.display = 'flex';
+          },5000);
           document.getElementById('sound').play();
           isPlay = true;
       }
